@@ -2,13 +2,19 @@ var arr = Components.classes['@mozilla.org/array;1'].createInstance(Components.i
 
 for(let index = 0; index < msgHdrs.length; index++) {
 	let message = msgHdrs.queryElementAt(index, Ci.nsIMsgDBHdr);
-	if(message.threadParent == nsMsgKey_None) {
-		continue;
-	}
-	let parent = message.folder.msgDatabase.GetMsgHdrForKey(message.threadParent);
-	let parentTags = parent.getStringProperty('keywords');
+	let parentKey = message.threadParent;
+	let parentTags = "";
 
-	arr.clear();
-	arr.appendElement(message, false);
-	message.folder.addKeywordsToMessages(arr, parentTags);
+	while(parentKey != nsMsgKey_None) {
+		let parent = message.folder.msgDatabase.GetMsgHdrForKey(parentKey);
+		let parentTags = parent.getStringProperty('keywords');
+
+		if(parentTags) {
+			arr.clear();
+			arr.appendElement(message, false);
+			message.folder.addKeywordsToMessages(arr, parentTags);
+			break;
+		}
+		parentKey = parent.threadParent;
+	}
 }
