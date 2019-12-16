@@ -9,18 +9,18 @@ work nowadays.
 [1]: https://bountify.co/thunderbird-plug-in-for-auto-tag-messages-based-on-previous-message-in-thread
 
 ## How to use
-1. Install the [FiltaQuilla Add-on][2]. As of now with Thunderbird 52.6.0 the
-   add-on works perfectly fine despite the compatibility flags saying
-   otherwise. Therefore the add-on file needs to be downloaded and installed
-   manually.
+1. Install the [FiltaQuilla Add-on][2].
 2. After installation, check the `JavaScript Action` mark in the `Filter
    Actions` tab of the add-on settings.
 3. Restart Thunderbird.
 4. Create a new filter:
-   - When using the `Checking mail` condition, make sure to select `After
+   - Tick the `Checking mail` condition, make sure to select `After
      classification`.
+   - Tick `Periodically, every 10 minutes`
    - In actions, select `JavaScript Action` and paste the contents of
-     [autotag.min.js](autotag.min.js) into the text field.
-     **Warning:** Using `autotag.js` might corrupt the filter settings file!
+     [autotag.js](autotag.js) into the JavaScript editor.
 
-[2]: https://addons.mozilla.org/en-US/thunderbird/addon/filtaquilla/
+## Notes
+- Tested with Thunderbird 68.3.0.
+
+[2]: https://github.com/RealRaven2000/FiltaQuilla
