@@ -21,6 +21,6 @@ work nowadays.
      [autotag.js](autotag.js) into the JavaScript editor.
 
 ## Notes
-- Tested with Thunderbird 68.3.0.
+- Tested with Thunderbird 68.4.1 and FiltaQuilla 2.0.
 
 [2]: https://github.com/RealRaven2000/FiltaQuilla
