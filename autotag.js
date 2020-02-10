@@ -3,7 +3,7 @@ var arr = Components.classes['@mozilla.org/array;1'].createInstance(Components.i
 function getMessageKeywords(msg) {
 	return msg.getStringProperty('keywords').split(" ").filter(
 		keyword => {
-			return !["$mailflagbit0", "nonjunk"].includes(keyword);
+			return !["", "$mailflagbit0", "nonjunk"].includes(keyword);
 		}
 	);
 }
