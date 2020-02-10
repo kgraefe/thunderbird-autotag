@@ -22,5 +22,7 @@ work nowadays.
 
 ## Notes
 - Tested with Thunderbird 68.4.1 and FiltaQuilla 2.0.
+- The easiest debugging method is logging to the error console (`Menu -> Extras
+  -> Developer Tools -> Error Console`) using the `console.log()` function.
 
 [2]: https://github.com/RealRaven2000/FiltaQuilla
