@@ -9,7 +9,7 @@ function getMessageKeywords(msg) {
 }
 
 for(let index = 0; index < msgHdrs.length; index++) {
-	let message = msgHdrs.queryElementAt(index, Ci.nsIMsgDBHdr);
+	let message = msgHdrs[index];
 	let parentKey = message.threadParent;
 
 	if(getMessageKeywords(message).length > 0) {
