@@ -21,7 +21,7 @@ work nowadays.
      [autotag.js](autotag.js) into the JavaScript editor.
 
 ## Notes
-- Tested with Thunderbird 78.13.0 and FiltaQuilla 3.2.
+- Tested with Thunderbird 91.2.1 and FiltaQuilla 3.2.
 - The easiest debugging method is logging to the error console (`Menu -> Extras
   -> Developer Tools -> Error Console`) using the `console.log()` function.
 

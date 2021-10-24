@@ -1,5 +1,3 @@
-var arr = Components.classes['@mozilla.org/array;1'].createInstance(Components.interfaces.nsIMutableArray);
-
 function getMessageKeywords(msg) {
 	return msg.getStringProperty('keywords').split(" ").filter(
 		keyword => {
@@ -20,9 +18,7 @@ for(let index = 0; index < msgHdrs.length; index++) {
 		let parent = message.folder.msgDatabase.GetMsgHdrForKey(parentKey);
 		let parentTags = getMessageKeywords(parent);
 		if(parentTags.length > 0) {
-			arr.clear();
-			arr.appendElement(message, false);
-			message.folder.addKeywordsToMessages(arr, parentTags.join(" "));
+			message.folder.addKeywordsToMessages([message], parentTags.join(" "));
 			break;
 		}
 		parentKey = parent.threadParent;
