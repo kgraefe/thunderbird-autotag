@@ -1,3 +1,5 @@
+const nsMsgKey_None = 0xffffffff;
+
 function getMessageKeywords(msg) {
 	return msg.getStringProperty('keywords').split(" ").filter(
 		keyword => {
@@ -15,7 +17,7 @@ for(let index = 0; index < msgHdrs.length; index++) {
 	}
 
 	while(parentKey != nsMsgKey_None) {
-		let parent = message.folder.msgDatabase.GetMsgHdrForKey(parentKey);
+		let parent = message.folder.msgDatabase.getMsgHdrForKey(parentKey);
 		let parentTags = getMessageKeywords(parent);
 		if(parentTags.length > 0) {
 			message.folder.addKeywordsToMessages([message], parentTags.join(" "));
